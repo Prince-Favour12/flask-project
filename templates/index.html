@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <form method="POST" action="/pred">
+        <input type="number" name="Bedroom" step="1" placeholder="Enter total bedroom">
+        
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction is not none %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
