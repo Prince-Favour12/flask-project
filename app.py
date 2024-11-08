@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import numpy as np
 import joblib
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -35,4 +36,4 @@ def pred():
     return render_template('index.html',result=round(prediction, 2))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    serve(app, host= "0.0.0.0", port= 8000)
